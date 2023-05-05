@@ -1,0 +1,82 @@
+---
+import Container from "@components/container.astro";
+import Dropdown from "./dropdown.astro";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+
+const menuitems = [
+  {
+    title: "Empresa",
+    path: "/sobre",
+  },
+  {
+    title: "Vistos",
+    path: "#visas",
+    children: [
+      { title: "Procura de Trabalho", path: "/procura-de-trabalho" },
+      { title: "Nomade Digital", path: "/nomade-digital" },
+      { title: "Estudante", path: "/estudante" },
+      { title: "Aposentados", path: "/aposentados" },
+      { title: "Pensionistas", path: "/pensionistas" },
+    ],
+  },
+  {
+    title: "Seguro viagem",
+    path: "/#insurance",
+  },
+  {
+    title: "PB4 CDAM",
+    path: "/#pb4",
+  },
+  {
+    title: "Perguntas frequentes",
+    path: "/#faq",
+  },
+  {
+    title: "Contato",
+    path: "/#contact",
+  },
+];
+---
+
+<Container>
+  <header class="flex flex-col lg:flex-row justify-between items-center my-5">
+    <Astronav>
+      <div class="flex w-full lg:w-auto items-center justify-between">
+        <a href="/" class="flex-col">
+          <span class="block hover:scale-110 duration-500 text-lg font-bold text-green-700">Brazucas em Portugal</span>
+          <span class="flex -mt-1 justify-center text-sm text-slate-500">Acessoria especializada</span>
+        </a>
+        <div class="block lg:hidden">
+          <MenuIcon class="w-4 h-4 text-gray-800" />
+        </div>
+      </div>
+      <MenuItems class="hidden w-full lg:w-auto mt-2 lg:flex lg:mt-0">
+        <ul class="flex flex-col lg:flex-row lg:gap-3">
+          {
+            menuitems.map((item, index) => (
+              <>
+                {item.children && (
+                  <Dropdown
+                    title={item.title}
+                    children={item.children}
+                    lastItem={index === menuitems.length - 1}
+                  />
+                )}
+
+                {!item.children && (
+                  <li class="hover:bg-gray-400 duration-500 rounded">
+                    <a
+                      href={item.path}
+                      class="p-1 flex lg:px-3 py-2 text-gray-600 rounded hover:text-white  hover:bg-green-700 duration-1000">
+                      {item.title}
+                    </a>
+                  </li>
+                )}
+              </>
+            ))
+          }
+        </ul>
+      </MenuItems>
+    </Astronav>
+  </header>
+</Container>
