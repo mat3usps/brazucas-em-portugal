@@ -1,0 +1,68 @@
+---
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+import insurance from "assets/insurance.jpeg?url";
+import reclameaqui from "assets/reclameaquilogo.jpeg?url";
+import realLogo from "assets/real-logo.jpeg?url";
+
+const content = [
+  {
+    title: "12x SEM JUROS!",
+    content: "Pague no cartão de crédito, boleto ou PIX.",
+    icon: "la:credit-card",
+  },
+  {
+    title: "Fan-tás-ti-cos na atenção!",
+    content: "Sempre te tratando com muito carinho. ReclameAqui: 9,8",
+    picture: reclameaqui,
+    alt: "Logo Reclame Aqui",
+  },
+  {
+    title: "Reembolso na hora!",
+    content: "Reembolso ou remarcação ilimitada até o início da vigência.",
+    icon: "la:handshake",
+  },
+];
+---
+
+<div id="insurance" class="mt-12">
+  <img src={insurance} alt="" class="h-96 w-full object-cover position-bottom" />
+  <div class="flex-col items-center mt-8">
+    <h3 class="text-center text-green-600 text-4xl font-bold">
+      Faça uma cotação de seguro viagem
+    </h3>
+    <h4 class="text-center text-green-600 text-2xl font-bold">
+      Nossa seguradora parceira
+    </h4>
+    <div class="flex justify-center h-40">
+      <img src={realLogo} alt="Logo Real Seguro de Viagem" class="rounded mt-4" />
+    </div>
+    <div class="grid gap-6 sm:grid-cols-3 p-10">
+      {
+        content.map(({ title, content, icon, picture, alt }) => {
+          return (
+            <div class="bg-green-200 rounded flex-col items-center text-center p-4">
+              <span class="font-bold text-green-700">{title}</span>
+              <p>{content}</p>
+              <div class="h-24 flex justify-center">
+                {icon && <Icon class="text-green-500" name={icon} />}
+                {picture && (
+                  <img src={picture} alt={alt} class="rounded mt-2" />
+                )}
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+    <div class="flex justify-center">
+      <Link
+        href="https://www.seguroviagem.srv.br/"
+        target="_blank"
+        rel="noopener">
+        <Icon class="text-white w-5 h-5 mr-2" name="la:arrow-right" />
+        Fazer cotação
+      </Link>
+    </div>
+  </div>
+</div>
