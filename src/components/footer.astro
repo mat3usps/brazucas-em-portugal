@@ -1,0 +1,35 @@
+---
+import { Icon } from "astro-icon";
+---
+<footer class="my-20">
+  <div>
+    <p class="text-center text-green-700">Nossas Redes</p>
+    <div class="flex justify-center">
+      <a
+        href="https://www.youtube.com/@brazucasemportugal"
+        target="_blank"
+        class="w-12"
+        ><Icon class="text-green-500" name="la:youtube" /></a
+      >
+      <a
+        href="https://www.instagram.com/brazucas_emportugal/"
+        target="_blank"
+        class="w-12 ml-4"
+        ><Icon class="text-green-500" name="la:instagram" /></a
+      >
+      <a
+        href="https://api.whatsapp.com/message/NET42Z7PWRV5M1?autoload=1&app_absent=0"
+        target="_blank"
+        class="w-10 my-1 ml-4"
+        ><Icon class="text-green-500" name="la:whatsapp" /></a
+      >
+    </div>
+  </div>
+  <p class="text-center text-sm mt-12">
+  {/* TODO: add reference */}
+    Site desenvolvido por <a href={} class="font-bold cursor-pointer">DTCode</a>
+  </p>
+  <p class="text-center text-sm mt-4 text-green-700">
+    Brazucas em Portugal © {new Date().getFullYear()}
+  </p>
+</footer>
