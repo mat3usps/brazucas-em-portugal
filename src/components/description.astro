@@ -1,0 +1,71 @@
+---
+import { Icon } from "astro-icon";
+import Link from "@components/ui/link.astro";
+import consulting from "../assets/consulting.jpeg";
+import passport from "../assets/passport.jpeg";
+---
+
+<div class="mt-12">
+  <div class="grid sm:grid-cols-2 mt-4 gap-8 p-6">
+    <img
+      src={consulting}
+      alt="Cliente em vídeo conferência."
+      class="rounded h-96 object-cover"
+    />
+    <div class="grid gap-2 px-4 md:mt-4">
+      <h2 class="text-center text-2xl sm:text-3xl font-bold text-green-500">
+        Consultoria focada no seu projeto
+      </h2>
+      <span class="font-bold text-sm text-center">✔ CONSULTORIA INDIVIDUAL</span
+      >
+      <p>
+        Reunião por vídeo, focada 100% no seu projeto. Informações completas
+        sobre o visto mais adequado e passo a passo do processo.
+      </p>
+      <ul>
+        <li>- Uma reunião;</li>
+        <li>- Manual digital em PDF;</li>
+        <li>- Suporte via Whatsapp por 3 meses.</li>
+        <li>Valor: R$ 99,00</li>
+      </ul>
+      <div class="flex justify-center">
+        {/* TODO: add link */}
+        <Link class="py-1" href={}>
+          <Icon class="text-white w-5 h-5 mr-2" name="la:arrow-right" />
+          Solicitar Consultoria
+        </Link>
+      </div>
+    </div>
+  </div>
+  <div class="grid sm:grid-cols-2 mt-4 gap-8 p-6">
+    <div class="grid gap-2 px-4 md:mt-4">
+      <h2 class="text-center text-2xl sm:text-3xl font-bold text-green-500">
+        Assessoria completa em visto consular
+      </h2>
+      <span class="font-bold text-sm text-center">✔ ASSESSORIA INDIVIDUAL</span>
+      <p>
+        Após a consultoria, caso seja do seu interesse, disponibilizamos uma
+        assessoria onde fazemos o processo da solicitação de visto em seu nome e
+        cuidamos da documentação.
+      </p>
+      <ul>
+        <li>- Várias reuniões;</li>
+        <li>- Material em PDF;</li>
+        <li>- Suporte diário via Whatsapp por 3 meses.</li>
+        <li>Valor: R$ 400,00</li>
+      </ul>
+      <div class="flex justify-center">
+        {/* TODO: add link */}
+        <Link class="py-1" href={}>
+          <Icon class="text-white w-5 h-5 mr-2" name="la:arrow-right" />
+          Solicitar Assessoria
+        </Link>
+      </div>
+    </div>
+    <img
+      src={passport}
+      alt="Passaporte sobre um mapa."
+      class="rounded h-96 object-cover"
+    />
+  </div>
+</div>
