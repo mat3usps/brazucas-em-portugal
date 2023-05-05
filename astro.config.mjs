@@ -1,8 +1,10 @@
 import { defineConfig } from 'astro/config';
-
 import tailwind from "@astrojs/tailwind";
 
-// https://astro.build/config
+import react from "@astrojs/react";
+
+// TODO: set defineConfig.site *
 export default defineConfig({
-  integrations: [tailwind()]
+  site: "https://www.brazucas-em-portugal.com",
+  integrations: [tailwind(), react()]
 });
