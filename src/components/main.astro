@@ -1,0 +1,37 @@
+---
+import bridge from "assets/bridge.jpg?url";
+import Link from "@components/ui/link.astro";
+import { Icon } from "astro-icon";
+---
+
+<main
+  class="grid lg:grid-cols-1 place-items-center mt-4 mb-6 pt-6 pb-3 md:pt-4 md:pb-6">
+  <div class="-z-10">
+    <img
+      src={bridge}
+      alt="Ponte em Portugal"
+      class="object-cover w-screen h-96 -mb-72"
+    />
+  </div>
+  <div class="bg-gray-500 bg-opacity-70 p-4 rounded">
+    <h1
+      class="text-5xl text-green-500 lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter">
+      Brazucas em Portugal
+    </h1>
+    <p class="text-lg mt-4 text-white max-w-xl">
+      Uma assessoria especializada em vistos que já ajudou milhares a entrar em
+      Portugal de forma legal.
+      <span class="block text-white font-bold hover:text-green-400 duration-500"
+        >Entramos com sua solicitação de visto em até 7 dias úteis!</span
+      >
+    </p>
+    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+      {/* TODO: add link */}
+      <Link href="#contact" class="hover:scale-110" rel="noopener">
+        <Icon class="text-white w-5 h-5 mr-2" name="la:arrow-right" />
+
+        Falar com um especialista
+      </Link>
+    </div>
+  </div>
+</main>
