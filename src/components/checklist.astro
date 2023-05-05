@@ -1,0 +1,59 @@
+---
+import { Icon } from "astro-icon";
+import Link from "@components/ui/link.astro";
+import checklist from "assets/checklist.jpeg?url";
+import jobs from "assets/jobs.jpeg?url";
+---
+
+<div id="faq" class="bg-green-700 mt-4 px-8 py-4">
+  <h2 class="text-white font-bold text-center text-4xl tracking-tight">
+    CHECKLIST COMPLETO DA MUDANÇA *GRATUITO*
+  </h2>
+</div>
+<div>
+  <img
+    src={checklist}
+    alt="Atendimento médico"
+    class="object-cover h-60 w-full rounded"
+  />
+</div>
+<div class="px-12 text-green-600 grid sm:grid-cols-2">
+  <div class="mt-4 p-8">
+    <p>
+      Receba em seu e-mail um checklist perfeito da sua mudança para Portugal.
+      Tudo o que você precisa saber para se planejar adequadamente. Disponível
+      para download e impressão.
+    </p>
+    <p class="mt-4">
+      Basta preencher um formulário e nos enviar. Fique de olho nos spam!
+    </p>
+  </div>
+  <div class="flex justify-center items-center">
+    {/* TODO: add link */}
+    <Link class="py-1" href={}>
+      <Icon class="text-white w-5 h-5 mr-2" name="la:download" />
+      Solicitar Consultoria
+    </Link>
+  </div>
+</div>
+<div>
+  <img
+    src={jobs}
+    alt="Atendimento médico"
+    class="object-cover h-60 w-full rounded"
+  />
+</div>
+<div class="px-8 py-4">
+  <h2 class="text-green-700 font-bold text-center text-4xl tracking-tight">
+    Brighter Future - Pesquise aqui a sua
+  </h2>
+  <div class="flex items-center justify-center mt-4">
+    <Link
+      class="py-1"
+      href="https://brighterfuture.joseneves.org/"
+      target="_blank">
+      <Icon class="text-white w-5 h-5 mr-2" name="la:arrow-right" />
+      Profissão em Portugal
+    </Link>
+  </div>
+</div>
