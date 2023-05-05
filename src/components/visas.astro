@@ -1,0 +1,68 @@
+---
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    label: "Visto para Procura de Trabalho",
+    path: "/procura-de-trabalho",
+    icon: "la:hammer",
+  },
+  {
+    label: "Visto de Nomade Digital",
+    path: "/nomade-digital",
+    icon: "la:globe",
+  },
+  {
+    label: "Visto de Estudante",
+    path: "/estudante",
+    icon: "la:graduation-cap",
+  },
+  {
+    label: "Visto para Aposentados",
+    path: "/aposentados",
+    icon: "la:blind",
+  },
+  {
+    label: "Visto para Pensionistas",
+    path: "/pensionistas",
+    icon: "la:user-friends",
+  },
+];
+---
+
+<div id="visas" class="mt-16 md:mt-0 p-4 bg-green-100">
+  <h2 class="text-3xl text-green-600 lg:text-5xl font-bold lg:tracking-tight">
+    Conheça nossos serviços de visto para Portugal
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Trabalhamos de maneira personalizada e na nossa consultoria, através de uma
+    reunião por vídeo, levantamos todas as possibilidades dessa mudança para
+    Portugal de acordo com a sua realidade profissional e financeira.
+  </p>
+  <p class="text-lg mt-4 text-slate-600">
+    A lista de documentos necessários pode variar de acordo com o perfil de cada
+    um.
+  </p>
+  <p class="text-lg mt-4 text-slate-600">Por isso essa reunião é tão importante.</p>
+  <p class="text-lg mt-4 text-slate-600">
+    Com a sua documentação toda em ordem, damos entrada no seu visto em até 7
+    dias úteis.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-8 gap-8 p-6">
+  {
+    features.map((item) => (
+      <a href={item.path}>
+        <div class="flex bg-green-500 p-2 rounded gap-2 items-center hover:bg-green-400 hover:scale-105 duration-500">
+          <div class="bg-white rounded-full  p-2 w-10 h-10 shrink-0">
+            <Icon class="text-green-500" name={item.icon} />
+          </div>
+          <div>
+            <span class="text-lg mt-4 text-slate-600">{item.label}</span>
+          </div>
+        </div>
+      </a>
+    ))
+  }
+</div>
