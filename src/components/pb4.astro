@@ -1,0 +1,44 @@
+---
+import Link from "./ui/link.astro";
+import doctorAppointment from "assets/doctor-appointment.jpeg?url";
+
+const content = [
+  { question: "O que é PB4?", answer: "Algo" },
+  { question: "Quem pode utilizar este serviço?", answer: "Algo 2" },
+  {
+    question: "Quais as etapas para a realização desse serviço?",
+    answer: "Algo 3",
+  },
+  { question: "O PB4 substitui o seguro viagem?", answer: "Algo 4" },
+  { question: "Outras informações", answer: "Algo 5" },
+];
+---
+
+<div id="pb4" class="bg-green-700 mt-12 px-8 py-4">
+  <h2 class="text-white font-bold text-center text-4xl tracking-tight">
+    PB4 - Obter o certificado de assistência médica (CDAM)
+  </h2>
+</div>
+<div class="grid sm:grid-cols-2 px-8 py-4">
+  <div class="m-4">
+    {
+      content.map(({ question, answer }) => {
+        return (
+          <div tabindex="0" class="collapse border-2 border-green-700 text-green-700 bg-[#f6f6f6] rounded-box">
+            <div class="collapse-title text-xl font-medium">{question}</div>
+            <div class="collapse-content">
+              <p>{answer}</p>
+            </div>
+          </div>
+        );
+      })
+    }
+  </div>
+  <div class="m-4">
+    <img
+      src={doctorAppointment}
+      alt="Atendimento médico"
+      class="object-cover h-96 rounded"
+    />
+  </div>
+</div>
