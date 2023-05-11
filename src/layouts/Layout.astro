@@ -3,7 +3,7 @@ import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import brazucas from "@assets/brazucas.jpeg?url";
-import website from "@assets/bridge.jpg?url";
+import bridge from "@assets/bridge.jpg?url";
 import "@fontsource/inter/variable.css";
 
 export interface Props {
@@ -11,11 +11,6 @@ export interface Props {
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-
-const resolvedImageWithDomain = new URL(
-  "/bridge.jpg",
-  Astro.site
-).toString();
 
 const { title } = Astro.props;
 
@@ -38,7 +33,7 @@ const makeTitle = title
       canonical={canonicalURL}
       openGraph={{
         basic: {
-          image: website,
+          image: "https://github.com/mat3usps/brazucas-em-portugal/blob/main/src/assets/bridge.jpg",
           title: "Portugal nunca esteve tão acessível!",
           type: "website",
           url: canonicalURL,
@@ -46,7 +41,7 @@ const makeTitle = title
       }}
       twitter={{
           description: "Confira nossos serviços e seja mais um brasileiro a mudar de vida.",
-          image: website,
+          image: "https://github.com/mat3usps/brazucas-em-portugal/blob/main/src/assets/bridge.jpg",
           title: "Portugal nunca esteve tão acessível",
         }}
     />
