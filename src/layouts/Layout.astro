@@ -2,7 +2,6 @@
 import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
-import brazucas from "@assets/brazucas.jpeg?url";
 import bridge from "@assets/bridge.jpg?url";
 import "@fontsource/inter/variable.css";
 
@@ -12,7 +11,7 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
-const { title } = Astro.props;
+const { title } : Props = Astro.props;
 
 const makeTitle = title
   ? `${title} | Brazucas em Portugal`
@@ -33,17 +32,23 @@ const makeTitle = title
       canonical={canonicalURL}
       openGraph={{
         basic: {
-          image: "https://github.com/mat3usps/brazucas-em-portugal/blob/main/src/assets/bridge.jpg",
+          image: bridge,
           title: "Portugal nunca esteve tão acessível!",
           type: "website",
           url: canonicalURL,
-        }
+        },
       }}
-      twitter={{
-          description: "Confira nossos serviços e seja mais um brasileiro a mudar de vida.",
-          image: "https://github.com/mat3usps/brazucas-em-portugal/blob/main/src/assets/bridge.jpg",
-          title: "Portugal nunca esteve tão acessível",
-        }}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        meta: [
+          {
+            name: "twitter:image",
+            content: "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+          },
+          { name: "twitter:title", content: "Tinker Tailor Soldier Spy" },
+          { name: "twitter:description", content: "Agent" },
+        ],
+      }}
     />
   </head>
   <body>
