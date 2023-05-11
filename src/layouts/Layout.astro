@@ -3,6 +3,7 @@ import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
 import Navbar from "@components/navbar/navbar.astro";
 import brazucas from "@assets/brazucas.jpeg?url";
+import website from "./../../public/websitepreview.jpeg";
 import "@fontsource/inter/variable.css";
 
 export interface Props {
@@ -12,7 +13,7 @@ export interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
 const resolvedImageWithDomain = new URL(
-  "/websitepreview.jpg",
+  "/websitepreview.jpeg",
   Astro.site
 ).toString();
 
@@ -21,7 +22,6 @@ const { title } = Astro.props;
 const makeTitle = title
   ? `${title} | Brazucas em Portugal`
   : "Brazucas em Portugal";
-// TODO: set SEO Engine
 ---
 
 <!DOCTYPE html>
@@ -38,7 +38,6 @@ const makeTitle = title
       canonical={canonicalURL}
       openGraph={{
         basic: {
-          description: "Confira nossos serviços e seja mais um brasileiro a mudar de vida.",
           image: resolvedImageWithDomain,
           title: "Portugal nunca esteve tão acessível!",
           type: "website",
@@ -47,7 +46,7 @@ const makeTitle = title
       }}
       twitter={{
           description: "Confira nossos serviços e seja mais um brasileiro a mudar de vida.",
-          image: resolvedImageWithDomain,
+          image: website,
           title: "Portugal nunca esteve tão acessível",
         }}
     />
